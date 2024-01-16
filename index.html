@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="shortcut icon"
+      href="images/triangleLogo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6b219ab309.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Windbnb</title>
+  </head>
+  <body>
+    <section class="main">
+      <div class="header">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="navbar">
+          <div class="location-bar" onclick="showHeader()">
+            <p>Helsinki, Finland</p>
+          </div>
+          <div class="guests-bar" onclick="showHeader()">
+            <p>Add guests</p>
+          </div>
+          <div class="search-bar" onclick="showHeader()">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="full-header">
+        <p class="search-edit">EDIT YOUR SEARCH</p>
+        <div class="row g-2">
+          <div class="col-sm-4 form-field">
+            <div class="dropdown">
+              <div class="form-floating form-left">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="selectLocation"
+                  placeholder="Add Location"
+                  value="Helsinki, Finland"
+                  onfocus="showLocationDropdown()"
+                  onclick="showLocationDropdown()"
+                />
+                <label for="selectLocation">Add Location</label>
+              </div>
+              <div class="location-dropdown">
+                <ul>
+                  <li>
+                    <a href="#" onclick="selectLocation('Helsinki, Finland')"
+                      ><i class="fas fa-map-marker-alt"></i>Helsinki, Finland</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" onclick="selectLocation('Turku, Finland')"
+                      ><i class="fas fa-map-marker-alt"></i>Turku, Finland</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" onclick="selectLocation('Vaasa, Finland')"
+                      ><i class="fas fa-map-marker-alt"></i>Vaasa, Finland</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" onclick="selectLocation('Oulu, Finland')"
+                      ><i class="fas fa-map-marker-alt"></i>Oulu, Finland</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 form-field">
+            <div class="dropdown">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="addGuests"
+                  placeholder="Add Guests"
+                  value="0 guests"
+                  onfocus="showGuestsDropdown()"
+                  onclick="showGuestsDropdown()"
+                />
+                <label for="addGuests">Add Guests</label>
+              </div>
+              <div class="guests-dropdown">
+                <div class="adults">
+                  <p class="guests-dropdown-heading">Adults</p>
+                  <p class="guests-dropdown-text">Ages 13 or above</p>
+                  <i class="far fa-minus-square" id="decrement-btn1"></i
+                  ><span id="counter-value1">0</span
+                  ><i class="far fa-plus-square" id="increment-btn1"></i>
+                </div>
+
+                <div class="children">
+                  <p class="guests-dropdown-heading">Children</p>
+                  <p class="guests-dropdown-text">Ages 2-12</p>
+                  <i class="far fa-minus-square" id="decrement-btn2"></i
+                  ><span id="counter-value2">0</span
+                  ><i class="far fa-plus-square" id="increment-btn2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 form-field">
+            <div class="form-floating form-right">
+              <div class="form-control form-search">
+                <div class="search-btn">
+                  <i class="fas fa-search"></i>
+                  <p>Search</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <i class="fas fa-times" onclick="hideHeader()"></i>
+      </div>
+
+      <div class="stays-in-finland">
+        <h3>Stays in Finland</h3>
+        <h6>12+ stays</h6>
+      </div>
+
+      
+      <div class="stays-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+  </body>
+</html>
